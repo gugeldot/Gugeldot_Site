@@ -216,3 +216,52 @@ h2{
 #gitTitle{
 	margin-bottom: 5px;
 }
+
+#contact{
+display: flex; 
+justify-content: center; 
+align-items: center; 
+}
+
+#nombre {
+	width: 400px;
+	font-size: 1.3em;
+	border-radius: 10px;
+	padding: 10px;
+	border:none;
+}
+#correo{
+	width: 400px;
+	font-size: 1.3em;
+	border-radius: 10px;
+	padding: 10px;
+	border:none;
+}
+
+#mensaje{
+	
+	resize: none;
+	width: 400px;
+	height: 200px;
+	font-size: 1.3em;
+	font-family: Poppins,sans-serif;
+	border-radius: 10px;
+	padding: 10px;
+	border:none;
+
+}
+
+#submit-btn{
+	width: 400px;
+	background-color: rgba(0,0,0,0.1);
+	color: white;
+	font-family: Poppins,sans-serif;
+	font-weight: bold;
+	padding: 5px;
+	border-radius: 20px;
+	transition: 0.2s;
+}
+#submit-btn:hover{
+	background-color: rgba(255,255,255,0.1);
+	box-shadow: 0px 0px 10px rgba(169, 11, 244, 0.5);
+}

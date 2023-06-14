@@ -6,6 +6,7 @@
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<script src="barraNavegacion.js"></script>
+	
 </head>
 <body>
 
@@ -21,16 +22,24 @@
 	</ul>
 
 	<div class="main-window"> 
-		
-		<h1>Contact info</h1>
-		<div class="contactShow">
-		<ul>
-			<li><i>Mail</i>: gugeldot23@gmail.com </li>
-			<li><i>Discord</i>:  <a href="https://discord.com/users/556807243362729985" target="_blank">Gugeldot#3655</a></li>
-			<li><i>Gitub</i>: <a href="https://www.github.com/gugeldot" target="_blank">Gugeldot</a></li>
-		</ul>
-		<h2> Thanks for arriving here! <h2>
-	</div>
+		<h2> Do you want to get in touch? Contact here</h2>
+		<div id="contact">
+		<form id="contact-form">
+
+		    <input type="text" id="nombre" placeholder="Name" required /><br><br>
+
+		    <input type="email" id="correo" placeholder="Mail" required type="email"><br><br>
+
+		    <textarea id="mensaje" placeholder="Message" required minlength=10></textarea><br><br>
+		    
+		    <input id="submit-btn" type="submit" value="Submit">
+	  	</form>
+	  	</div>
+	  	<script src="key.js"></script>
+	  	<script src="contact.js"></script>
+
+
+	  	<h2> Thanks for arriving here! <h2>
 	</div>
 	</b>
 
