@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gugeldot's Place</title>
+	<link rel="stylesheet" href="main.css" type="text/CSS" />
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<script src="barraNavegacion.js"></script>
+</head>
+<body>
+	<b>
+	<ul id="navigationBar">
+		<li><span>Gugeldot</span></li>
+		<li><img id="pfp-navBar" src="https://avatars.githubusercontent.com/u/67150684?v=4"></li>	
+		<li><a class="separator"></a></li>
+		<li><a href="index.html" class="navigationBarElement" > Home </a></li>
+		<li><a href="#" id="current" class="navigationBarElement" > GitHub </a></li>
+		<!--<li><a href="other-projects.html" class="navigationBarElement" > Other Projects </a></li>  -->
+		<li><a href="contact.html"  class="navigationBarElement" > Contact </a></li>
+	</ul>
+	</b>
+
+	<div class="main-window"> 
+		<b><h1 id="gitTitle">Github</h1>
+			<p id="miniText">List of all public repositories</p>
+		</b>
+		<ul id="repo-list"></ul>
+	    <script>
+	       const username = 'gugeldot'; // Reemplaza con el nombre de usuario deseado
+
+	      fetch(`https://api.github.com/users/${username}/repos`)
+	        .then(response => response.json())
+	        .then(data => {
+	          const repoList = document.getElementById('repo-list');
+	          data.forEach(repo => {
+
+	            const listItem = document.createElement('p');
+	            listItem.classList.add('repoEntrada');
+	            listItem.setAttribute('onclick', `window.open('https://github.com/${username}/${repo.name}', '_blank')`);
+
+	            const repoName = document.createElement('p');
+	            repoName.id = 'repoNombre';
+	            repoName.textContent = repo.name;
+
+	            const repoLanguage = document.createElement('div');
+	            repoLanguage.classList.add('repoLanguage');
+	            repoLanguage.innerHTML = `Language: <span class="language-name">${repo.language}</span>`;
+
+
+	            const repoDescription = document.createElement('div');
+	            repoDescription.classList.add('repoDescription');
+	            repoDescription.textContent = repo.description;
+
+	            
+	            listItem.appendChild(repoName);
+	            listItem.appendChild(repoLanguage);
+	            listItem.appendChild(repoDescription);
+	            repoList.appendChild(listItem);
+
+	          });
+	        })
+	        .catch(error => {
+	          console.error('Error al obtener los repositorios:', error);
+	        });
+	    </script>
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+	</div>
+
+
+</body>
+</html>
